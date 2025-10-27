@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "FAZON Core Pilot — From Phase Semantics to Measurable Coherence"
+version: "0.1.0"
+authors:
+  - family-names: "Goldman"
+    given-names: "Meir"
+    affiliation: "FAZON Core"
+identifiers:
+  - type: url
+    value: "https://fazon.org"
+repository-code: "https://github.com/fazon-core/fazon-core-bundle"
+license: "Apache-2.0"
