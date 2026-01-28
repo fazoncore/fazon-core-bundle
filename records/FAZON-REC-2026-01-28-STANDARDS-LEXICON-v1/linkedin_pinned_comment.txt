@@ -1,0 +1,3 @@
+Canonical artifacts (v1):
+Zenodo DOI: <PASTE_ZENODO_DOI_URL>
+GitHub Release: <PASTE_GITHUB_RELEASE_URL>

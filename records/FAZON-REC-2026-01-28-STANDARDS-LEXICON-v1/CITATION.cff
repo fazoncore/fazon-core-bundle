@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "FAZON Standards Lexicon v1"
+message: "If you use this record, please cite it as below."
+authors:
+  - family-names: Goldman
+    given-names: Meir
+    affiliation: "FAZON Foundation"
+version: "v1"
+date-released: "2026-01-28"
+identifiers:
+  - type: other
+    description: "Record ID"
+    value: "FAZON-REC-2026-01-28-STANDARDS-LEXICON-v1"

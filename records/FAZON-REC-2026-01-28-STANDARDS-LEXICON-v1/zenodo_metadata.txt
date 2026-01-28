@@ -1,0 +1,18 @@
+Title
+FAZON Record — Standards Lexicon v1 (FAZON-REC-2026-01-28-STANDARDS-LEXICON-v1)
+
+Description
+Immutable evidence snapshot for the FAZON canonical record “Standards Lexicon v1”.
+
+Scope: public-safe vocabulary and framing only.
+No internal infrastructure, endpoints, implementation mechanics, thresholds, or enforcement logic.
+Vocabulary alignment does not imply certification or legal compliance.
+
+Record ID: FAZON-REC-2026-01-28-STANDARDS-LEXICON-v1
+GitHub Release: <PASTE_GITHUB_RELEASE_URL>
+
+Keywords
+ai governance, aiops, risk management, accountability, auditability, traceability, record-keeping, technical documentation, standards lexicon
+
+Creator
+Meir Goldman — FAZON Foundation

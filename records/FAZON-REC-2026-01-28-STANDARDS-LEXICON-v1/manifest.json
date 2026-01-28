@@ -1,0 +1,19 @@
+{
+  "record_id": "FAZON-REC-2026-01-28-STANDARDS-LEXICON-v1",
+  "version": "v1",
+  "date": "2026-01-28",
+  "scope": "public-safe vocabulary and framing only; no internal infrastructure; no thresholds; no enforcement logic",
+  "contents": [
+    "CITATION.cff",
+    "README.md",
+    "SHA256SUMS.txt",
+    "changelog.md",
+    "claims.md",
+    "evidence-pack.pdf",
+    "lexicon.md",
+    "linkedin_pinned_comment.txt",
+    "linkedin_post.txt",
+    "trfs_hashes.md",
+    "zenodo_metadata.txt"
+  ]
+}
