@@ -1,0 +1,48 @@
+{
+  "om_id": "OM-AI-0001",
+  "om_version": "v1",
+  "timestamp_utc": "2026-02-04T08:00:00Z",
+  "surface": "control_plane",
+  "action_class": "EXECUTE_CONSTRAINED",
+  "admissibility": {
+    "execution_mode": "FRAGMENT",
+    "rationale": "Policy-defined bounds evaluated; numeric limits are private."
+  },
+  "authority": {
+    "owner_role": "Ops Owner",
+    "approval_mode": "AUTO_WITH_POLICY",
+    "policy_ref": "POL-ENVELOPE-V1"
+  },
+  "evidence": {
+    "why_now_or_not_now": "Why not full now: dependency drift detected. Safe subset executed; risk-sensitive steps deferred until readiness is restored.",
+    "prev_evidence_hash": "20cb726bb57ffeceb9d06989591d3fed6d3630cb55e4b8df3ab7c78b590ebe83",
+    "signature": "sig_ref:optional",
+    "artifacts": [
+      {
+        "type": "TRACE_SUMMARY",
+        "id": "OM-AI-0001:summary",
+        "hash_sha256": "ca168c2d227bf6c297166604b8c05ec2b64e3f4f0f4c3c910ad2b973761ad264"
+      },
+      {
+        "type": "SPEC_SNAPSHOT",
+        "id": "POL-ENVELOPE-V1:spec",
+        "hash_sha256": "6c63cca69e723d254a5cd09587e2d90e548d3b68a5154a552ae37c11334d9be9"
+      },
+      {
+        "type": "CHECKLIST_RESULT",
+        "id": "OM-AI-0001:checklist",
+        "hash_sha256": "c65e5e3c4345c1b4c9109ce9d7973fb2df6746ab295ad56460d1339a9dac34d1"
+      }
+    ]
+  },
+  "payload": {
+    "domain": "AI_GOVERNANCE",
+    "payload_id": "AI_GOVERNANCE:OM-AI-0001",
+    "fields": {
+      "model_ref": "MODEL:approved-set",
+      "toolchain_ref": "SBOM:summary-hash-only",
+      "data_ref": "DATA:provenance-hash-only",
+      "note": "Sensitive details hashed/omitted."
+    }
+  }
+}

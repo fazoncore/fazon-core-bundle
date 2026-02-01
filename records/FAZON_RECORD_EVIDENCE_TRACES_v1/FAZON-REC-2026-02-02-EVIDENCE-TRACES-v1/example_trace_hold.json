@@ -1,0 +1,73 @@
+{
+  "trace_id": "TRACE-HOLD-0001",
+  "trace_version": "v1",
+  "timestamp_utc": "2026-02-02T07:12:40Z",
+  "action_class": "EXECUTE_CONSTRAINED",
+  "scope_id": "SCOPE-ACTION-CLASS2-EXAMPLE",
+  "admissibility": {
+    "envelope_order": [
+      "STATE_COHERENCE_DRIFT",
+      "ENERGY_THERMAL",
+      "COMMS_LATENCY_CONNECTIVITY"
+    ],
+    "constraint_families": [
+      {
+        "family": "STATE_COHERENCE_DRIFT",
+        "status": "FAIL",
+        "reason_code": "DRIFT_BOUNDS_VIOLATED"
+      },
+      {
+        "family": "ENERGY_THERMAL",
+        "status": "PASS",
+        "reason_code": "OK"
+      },
+      {
+        "family": "COMMS_LATENCY_CONNECTIVITY",
+        "status": "PASS",
+        "reason_code": "OK"
+      }
+    ],
+    "decision_rationale": "Policy-defined bounds evaluated by constraint family; numeric limits are private."
+  },
+  "execution_mode": "HOLD",
+  "authority_context": {
+    "owner_role": "Ops Owner",
+    "approval_mode": "AUTO_WITH_POLICY",
+    "policy_ref": "POL-ENVELOPE-V1",
+    "change_control_ref": "CCN-EXAMPLE-001"
+  },
+  "evidence": {
+    "why_now_or_not_now": "Why not now: state coherence/drift constraints failed. Execution deferred (fail-closed) until conditions recover; no best-guess execution.",
+    "artifacts": [
+      {
+        "type": "TRACE_SUMMARY",
+        "id": "TRACE-HOLD-0001:summary",
+        "hash_sha256": "dd9dbeb78e93bbbc4d3f5047d3f34303f4b3e9e60b5bf056383188380d470ca9"
+      },
+      {
+        "type": "SPEC_SNAPSHOT",
+        "id": "POL-ENVELOPE-V1:spec",
+        "hash_sha256": "6c63cca69e723d254a5cd09587e2d90e548d3b68a5154a552ae37c11334d9be9"
+      },
+      {
+        "type": "CHECKLIST_RESULT",
+        "id": "TRACE-HOLD-0001:checklist",
+        "hash_sha256": "a90e50b494e720efe7c82152c1129eb829bcbbc84dbe06a1b90c584eaa7913f6"
+      },
+      {
+        "type": "RUN_LOG",
+        "id": "TRACE-HOLD-0001:runlog",
+        "hash_sha256": "8351012b78ca714ec0d9476faf03f185c9149f2af4b0b461c928cf4f16f19338"
+      },
+      {
+        "type": "CHANGE_NOTE",
+        "id": "CCN-EXAMPLE-001",
+        "hash_sha256": "290e975bcedd43b7d98a5c6fe95cd8e1bb9e5462ec07bb169afd1ed3ff285707"
+      }
+    ]
+  },
+  "outcome": {
+    "result": "DEFERRED",
+    "notes": "No action executed. Event stored for later delivery window; operator notified via standard channel."
+  }
+}

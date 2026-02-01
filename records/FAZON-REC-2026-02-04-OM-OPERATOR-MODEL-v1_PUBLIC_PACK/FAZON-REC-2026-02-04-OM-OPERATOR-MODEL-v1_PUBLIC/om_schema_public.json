@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FAZON OM v1 (public-safe schema)",
+  "record_id": "FAZON-REC-2026-02-04-OM-OPERATOR-MODEL-v1",
+  "type": "object",
+  "required": [
+    "om_id",
+    "om_version",
+    "timestamp_utc",
+    "surface",
+    "action_class",
+    "admissibility",
+    "authority",
+    "evidence",
+    "payload"
+  ],
+  "properties": {
+    "om_id": {
+      "type": "string"
+    },
+    "om_version": {
+      "type": "string",
+      "enum": [
+        "v1"
+      ]
+    },
+    "timestamp_utc": {
+      "type": "string"
+    },
+    "surface": {
+      "type": "string",
+      "enum": [
+        "control_plane",
+        "audit_log",
+        "change_control"
+      ]
+    },
+    "action_class": {
+      "type": "string",
+      "enum": [
+        "OBSERVE",
+        "RECOMMEND",
+        "EXECUTE_CONSTRAINED",
+        "EXECUTE_SAFETY_CRITICAL"
+      ]
+    },
+    "admissibility": {
+      "type": "object",
+      "required": [
+        "execution_mode",
+        "rationale"
+      ],
+      "properties": {
+        "execution_mode": {
+          "type": "string",
+          "enum": [
+            "HOLD",
+            "FRAGMENT",
+            "SEND"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "owner_role",
+        "approval_mode",
+        "policy_ref"
+      ],
+      "properties": {
+        "owner_role": {
+          "type": "string"
+        },
+        "approval_mode": {
+          "type": "string",
+          "enum": [
+            "AUTO_WITH_POLICY",
+            "HUMAN_CONFIRM_REQUIRED",
+            "HUMAN_CONFIRMED",
+            "EMERGENCY_OVERRIDE"
+          ]
+        },
+        "policy_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "why_now_or_not_now",
+        "artifacts"
+      ],
+      "properties": {
+        "why_now_or_not_now": {
+          "type": "string"
+        },
+        "prev_evidence_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "signature": {
+          "type": "string"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type",
+              "id",
+              "hash_sha256"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "TRACE_SUMMARY",
+                  "SPEC_SNAPSHOT",
+                  "CHECKLIST_RESULT",
+                  "RUN_LOG",
+                  "CHANGE_NOTE"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "hash_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "domain",
+        "payload_id",
+        "fields"
+      ],
+      "properties": {
+        "domain": {
+          "type": "string",
+          "enum": [
+            "AI_GOVERNANCE",
+            "QKD_QKDN",
+            "ROBOTICS",
+            "OTHER"
+          ]
+        },
+        "payload_id": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

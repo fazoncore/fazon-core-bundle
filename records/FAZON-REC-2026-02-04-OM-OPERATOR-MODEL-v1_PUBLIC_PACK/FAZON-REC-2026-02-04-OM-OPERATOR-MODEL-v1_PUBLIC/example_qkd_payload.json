@@ -1,0 +1,48 @@
+{
+  "om_id": "OM-QKD-0001",
+  "om_version": "v1",
+  "timestamp_utc": "2026-02-04T08:00:00Z",
+  "surface": "audit_log",
+  "action_class": "EXECUTE_CONSTRAINED",
+  "admissibility": {
+    "execution_mode": "HOLD",
+    "rationale": "Policy-defined bounds evaluated; numeric limits are private."
+  },
+  "authority": {
+    "owner_role": "Ops Owner",
+    "approval_mode": "AUTO_WITH_POLICY",
+    "policy_ref": "POL-QKD-OPS-V1"
+  },
+  "evidence": {
+    "why_now_or_not_now": "Why not now: proof-basis requirements not met under policy-defined bounds. Key delivery deferred (fail-closed) with logged rationale.",
+    "prev_evidence_hash": "b4754c91fa4e1c60c01303a006800879df06ceb3a5b3f0b4b4019e200576ed37",
+    "signature": "sig_ref:optional",
+    "artifacts": [
+      {
+        "type": "TRACE_SUMMARY",
+        "id": "OM-QKD-0001:summary",
+        "hash_sha256": "1af0d771703eeb1a39c9610285f2ac3766adc7671f2dc9a5f1984867063f26b4"
+      },
+      {
+        "type": "SPEC_SNAPSHOT",
+        "id": "POL-QKD-OPS-V1:spec",
+        "hash_sha256": "ff049e0ec26db6b56ad0b5bb43c851303a9856852c2323313c9add8214a382ac"
+      },
+      {
+        "type": "CHECKLIST_RESULT",
+        "id": "OM-QKD-0001:checklist",
+        "hash_sha256": "286d3f5a5dcb9047b1e2f1e154c540021417fdf2aca908ed5ec4809ed1a8465c"
+      }
+    ]
+  },
+  "payload": {
+    "domain": "QKD_QKDN",
+    "payload_id": "QKD_QKDN:OM-QKD-0001",
+    "fields": {
+      "interface_ref": "ETSI:QKD-application-interface",
+      "proof_basis_ref": "ETSI:security-proofs-reference",
+      "telemetry": "hash-only",
+      "note": "Key material and raw measurements are private."
+    }
+  }
+}

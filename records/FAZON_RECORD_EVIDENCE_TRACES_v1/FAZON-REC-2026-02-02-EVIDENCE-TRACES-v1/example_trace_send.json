@@ -1,0 +1,73 @@
+{
+  "trace_id": "TRACE-SEND-0001",
+  "trace_version": "v1",
+  "timestamp_utc": "2026-02-02T07:25:12Z",
+  "action_class": "EXECUTE_CONSTRAINED",
+  "scope_id": "SCOPE-ACTION-CLASS2-EXAMPLE",
+  "admissibility": {
+    "envelope_order": [
+      "STATE_COHERENCE_DRIFT",
+      "ENERGY_THERMAL",
+      "COMMS_LATENCY_CONNECTIVITY"
+    ],
+    "constraint_families": [
+      {
+        "family": "STATE_COHERENCE_DRIFT",
+        "status": "PASS",
+        "reason_code": "OK"
+      },
+      {
+        "family": "ENERGY_THERMAL",
+        "status": "PASS",
+        "reason_code": "OK"
+      },
+      {
+        "family": "COMMS_LATENCY_CONNECTIVITY",
+        "status": "PASS",
+        "reason_code": "OK"
+      }
+    ],
+    "decision_rationale": "Policy-defined bounds evaluated by constraint family; numeric limits are private."
+  },
+  "execution_mode": "SEND",
+  "authority_context": {
+    "owner_role": "Ops Owner",
+    "approval_mode": "AUTO_WITH_POLICY",
+    "policy_ref": "POL-ENVELOPE-V1",
+    "change_control_ref": "CCN-EXAMPLE-001"
+  },
+  "evidence": {
+    "why_now_or_not_now": "Why now: all envelope constraint families passed under policy-defined bounds. Execution proceeded within the defined constrained scope, with evidence captured.",
+    "artifacts": [
+      {
+        "type": "TRACE_SUMMARY",
+        "id": "TRACE-SEND-0001:summary",
+        "hash_sha256": "a938cdcc1c5320fe143dd7ffc830d6256ec7fcad07d8a3fcacccd8898bed7d9d"
+      },
+      {
+        "type": "SPEC_SNAPSHOT",
+        "id": "POL-ENVELOPE-V1:spec",
+        "hash_sha256": "6c63cca69e723d254a5cd09587e2d90e548d3b68a5154a552ae37c11334d9be9"
+      },
+      {
+        "type": "CHECKLIST_RESULT",
+        "id": "TRACE-SEND-0001:checklist",
+        "hash_sha256": "9cef33cc53e70e70058d7cff245fb91e7ddbcae308d080885a6f3a04ee90e66f"
+      },
+      {
+        "type": "RUN_LOG",
+        "id": "TRACE-SEND-0001:runlog",
+        "hash_sha256": "cda0bd90a61e5762ad2b0d3a699df300082c8a237ac36fe96288934383481b28"
+      },
+      {
+        "type": "CHANGE_NOTE",
+        "id": "CCN-EXAMPLE-001",
+        "hash_sha256": "290e975bcedd43b7d98a5c6fe95cd8e1bb9e5462ec07bb169afd1ed3ff285707"
+      }
+    ]
+  },
+  "outcome": {
+    "result": "EXECUTED",
+    "notes": "Executed within constrained scope. Post-action checks passed; run log and checklist artifacts recorded."
+  }
+}

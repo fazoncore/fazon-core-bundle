@@ -1,0 +1,18 @@
+{
+  "record_id": "FAZON-REC-2026-02-02-EVIDENCE-TRACES-v1",
+  "version": "v1",
+  "scope": "public-safe synthetic traces; no thresholds; no internal endpoints",
+  "files": [
+    "README_EN.txt",
+    "evidence_trace_schema.json",
+    "example_trace_hold.json",
+    "example_trace_fragment.json",
+    "example_trace_send.json",
+    "evidence-pack.pdf",
+    "SHA256SUMS.txt",
+    "linkedin_post.txt",
+    "linkedin_pinned_comment.txt",
+    "zenodo_metadata.txt",
+    "manifest.json"
+  ]
+}

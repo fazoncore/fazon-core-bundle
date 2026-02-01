@@ -1,0 +1,12 @@
+{
+  "record_id": "FAZON-REC-2026-02-03-UNIFICATION-QA-v1",
+  "version": "v1",
+  "visibility": "public-safe",
+  "files": [
+    "unification_qa_public.md",
+    "evidence-pack.pdf",
+    "manifest.json",
+    "SHA256SUMS.txt",
+    "README_EN.txt"
+  ]
+}

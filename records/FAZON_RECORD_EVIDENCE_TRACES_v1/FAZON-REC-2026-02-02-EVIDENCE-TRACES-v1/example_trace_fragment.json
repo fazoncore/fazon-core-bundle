@@ -1,0 +1,73 @@
+{
+  "trace_id": "TRACE-FRAGMENT-0001",
+  "trace_version": "v1",
+  "timestamp_utc": "2026-02-02T07:18:05Z",
+  "action_class": "EXECUTE_CONSTRAINED",
+  "scope_id": "SCOPE-ACTION-CLASS2-EXAMPLE",
+  "admissibility": {
+    "envelope_order": [
+      "STATE_COHERENCE_DRIFT",
+      "ENERGY_THERMAL",
+      "COMMS_LATENCY_CONNECTIVITY"
+    ],
+    "constraint_families": [
+      {
+        "family": "STATE_COHERENCE_DRIFT",
+        "status": "PASS",
+        "reason_code": "OK"
+      },
+      {
+        "family": "ENERGY_THERMAL",
+        "status": "PASS",
+        "reason_code": "OK"
+      },
+      {
+        "family": "COMMS_LATENCY_CONNECTIVITY",
+        "status": "FAIL",
+        "reason_code": "LATENCY_OR_CONNECTIVITY_DEGRADED"
+      }
+    ],
+    "decision_rationale": "Policy-defined bounds evaluated by constraint family; numeric limits are private."
+  },
+  "execution_mode": "FRAGMENT",
+  "authority_context": {
+    "owner_role": "Ops Owner",
+    "approval_mode": "AUTO_WITH_POLICY",
+    "policy_ref": "POL-ENVELOPE-V1",
+    "change_control_ref": "CCN-EXAMPLE-001"
+  },
+  "evidence": {
+    "why_now_or_not_now": "Why not now (full): comms constraints degraded. Partial execution allowed: safe local steps executed; remote/irreversible steps deferred until connectivity is admissible.",
+    "artifacts": [
+      {
+        "type": "TRACE_SUMMARY",
+        "id": "TRACE-FRAGMENT-0001:summary",
+        "hash_sha256": "91b4791c641f39962c0abd84aa51631426566391f131a412946f2ee3fb303f7e"
+      },
+      {
+        "type": "SPEC_SNAPSHOT",
+        "id": "POL-ENVELOPE-V1:spec",
+        "hash_sha256": "6c63cca69e723d254a5cd09587e2d90e548d3b68a5154a552ae37c11334d9be9"
+      },
+      {
+        "type": "CHECKLIST_RESULT",
+        "id": "TRACE-FRAGMENT-0001:checklist",
+        "hash_sha256": "0607f39125061063ac490975adf016c441c44d69321a9d2046b3cf549c2be8bb"
+      },
+      {
+        "type": "RUN_LOG",
+        "id": "TRACE-FRAGMENT-0001:runlog",
+        "hash_sha256": "bb401edef16dff0071fd71447141955833cfb8aae8f5c8b4970242f8ffe584b6"
+      },
+      {
+        "type": "CHANGE_NOTE",
+        "id": "CCN-EXAMPLE-001",
+        "hash_sha256": "290e975bcedd43b7d98a5c6fe95cd8e1bb9e5462ec07bb169afd1ed3ff285707"
+      }
+    ]
+  },
+  "outcome": {
+    "result": "PARTIAL_EXECUTION",
+    "notes": "Executed local-safe subset only. Deferred remote-dependent operations. Evidence retained for audit and incident review."
+  }
+}

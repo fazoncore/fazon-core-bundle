@@ -1,0 +1,17 @@
+Title
+FAZON Record — Evidence Traces v1 (FAZON-REC-2026-02-02-EVIDENCE-TRACES-v1)
+
+Description
+Immutable archive for three public-safe, synthetic evidence traces demonstrating HOLD / FRAGMENT / SEND and “why now / why not now” decision records.
+
+Scope: public-safe examples only.
+No thresholds/bounds, internal endpoints, live topology, secrets, or key material.
+
+Record ID: FAZON-REC-2026-02-02-EVIDENCE-TRACES-v1
+GitHub Release: <PASTE_GITHUB_RELEASE_URL>
+
+Keywords
+evidence, audit trail, traceability, execution envelope, gating, fail-closed, autonomy, safety-critical, ai governance
+
+Creator
+Meir Goldman — FAZON Foundation

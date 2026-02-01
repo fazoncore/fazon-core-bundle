@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FAZON Evidence Trace Schema (public-safe)",
+  "record_id": "FAZON-REC-2026-02-02-EVIDENCE-TRACES-v1",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "trace_version",
+    "timestamp_utc",
+    "action_class",
+    "scope_id",
+    "admissibility",
+    "execution_mode",
+    "authority_context",
+    "evidence",
+    "outcome"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string"
+    },
+    "trace_version": {
+      "type": "string",
+      "enum": [
+        "v1"
+      ]
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "description": "ISO-8601 UTC timestamp"
+    },
+    "action_class": {
+      "type": "string",
+      "enum": [
+        "OBSERVE_ONLY",
+        "RECOMMEND",
+        "EXECUTE_CONSTRAINED",
+        "EXECUTE_SAFETY_CRITICAL"
+      ]
+    },
+    "scope_id": {
+      "type": "string"
+    },
+    "admissibility": {
+      "type": "object",
+      "required": [
+        "envelope_order",
+        "constraint_families",
+        "decision_rationale"
+      ],
+      "properties": {
+        "envelope_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraint_families": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "family",
+              "status",
+              "reason_code"
+            ],
+            "properties": {
+              "family": {
+                "type": "string",
+                "enum": [
+                  "STATE_COHERENCE_DRIFT",
+                  "ENERGY_THERMAL",
+                  "COMMS_LATENCY_CONNECTIVITY"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "PASS",
+                  "FAIL",
+                  "UNKNOWN"
+                ]
+              },
+              "reason_code": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "decision_rationale": {
+          "type": "string",
+          "description": "Public-safe rationale without numeric thresholds"
+        }
+      }
+    },
+    "execution_mode": {
+      "type": "string",
+      "enum": [
+        "HOLD",
+        "FRAGMENT",
+        "SEND"
+      ]
+    },
+    "authority_context": {
+      "type": "object",
+      "required": [
+        "owner_role",
+        "approval_mode",
+        "policy_ref"
+      ],
+      "properties": {
+        "owner_role": {
+          "type": "string"
+        },
+        "approval_mode": {
+          "type": "string",
+          "enum": [
+            "AUTO_WITH_POLICY",
+            "HUMAN_CONFIRM_REQUIRED",
+            "HUMAN_CONFIRMED",
+            "EMERGENCY_OVERRIDE"
+          ]
+        },
+        "policy_ref": {
+          "type": "string",
+          "description": "Reference to policy/spec ID (no internal URL)"
+        },
+        "change_control_ref": {
+          "type": "string",
+          "description": "Optional change-control note ID"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "why_now_or_not_now",
+        "artifacts"
+      ],
+      "properties": {
+        "why_now_or_not_now": {
+          "type": "string"
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type",
+              "id",
+              "hash_sha256"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "TRACE_SUMMARY",
+                  "SPEC_SNAPSHOT",
+                  "CHECKLIST_RESULT",
+                  "RUN_LOG",
+                  "CHANGE_NOTE"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "hash_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "required": [
+        "result",
+        "notes"
+      ],
+      "properties": {
+        "result": {
+          "type": "string",
+          "enum": [
+            "DEFERRED",
+            "PARTIAL_EXECUTION",
+            "EXECUTED"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

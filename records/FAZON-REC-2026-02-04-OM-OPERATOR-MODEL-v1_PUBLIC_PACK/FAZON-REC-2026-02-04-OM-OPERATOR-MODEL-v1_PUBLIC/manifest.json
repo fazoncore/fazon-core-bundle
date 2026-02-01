@@ -1,0 +1,12 @@
+{
+  "record_id": "FAZON-REC-2026-02-04-OM-OPERATOR-MODEL-v1",
+  "version": "v1",
+  "visibility": "public-safe",
+  "files": [
+    "README_EN.txt",
+    "example_ai_payload.json",
+    "example_qkd_payload.json",
+    "om_operator_model_public.md",
+    "om_schema_public.json"
+  ]
+}

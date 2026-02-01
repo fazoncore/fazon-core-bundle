@@ -1,0 +1,7 @@
+Canonical artifacts (v1):
+Zenodo DOI: <PASTE_ZENODO_DOI_URL>
+GitHub Release: <PASTE_GITHUB_RELEASE_URL>
+
+Related:
+Execution Envelope v1 (scheduled): FAZON-REC-2026-02-01-EXECUTION-ENVELOPE-v1
+Standards Lexicon v1 (DOI): https://doi.org/10.5281/zenodo.18405421

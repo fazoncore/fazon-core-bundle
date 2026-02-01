@@ -1,0 +1,11 @@
+Record pack: Evidence Traces v1 (public-safe examples)
+
+Three synthetic examples of governance-grade execution traces:
+- HOLD: blocked (fail-closed)
+- FRAGMENT: partial execution (safe subset only)
+- SEND: executed within constrained scope
+
+Each trace retains a verifiable “why now / why not now” decision record and artifact hashes (placeholders here).
+No numeric thresholds or internal endpoints are disclosed.
+
+Record ID: FAZON-REC-2026-02-02-EVIDENCE-TRACES-v1
