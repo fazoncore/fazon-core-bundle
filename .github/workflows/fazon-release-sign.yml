@@ -42,10 +42,15 @@ jobs:
           TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           printf '{"name":"FAZON Release","tag":"%s","sha256":"%s","created_utc":"%s"}\n' "$TAG" "$SHA" "$TS" > dist/release.manifest.json
 
-      - name: Install cosign
-        uses: sigstore/cosign-installer@v3
-        with:
-          cosign-release: v3.0.4
+      - name: Install cosign (manual)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.local/bin"
+          curl -fsSL -o "$HOME/.local/bin/cosign" "https://github.com/sigstore/cosign/releases/download/v3.0.4/cosign-linux-amd64"
+          chmod +x "$HOME/.local/bin/cosign"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          cosign version
 
       - name: Cosign sign-blob (keyless) + bundle
         shell: bash
