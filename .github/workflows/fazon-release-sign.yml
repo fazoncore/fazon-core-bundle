@@ -131,6 +131,7 @@ PY
             dist/release.zip.sigstore.json
             dist/release.manifest.json
 
+
       - name: Create GitHub Release (attach artifacts)
         uses: softprops/action-gh-release@v2
         with:
