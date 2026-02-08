@@ -37,26 +37,23 @@ jobs:
           fi
 
           sha256sum dist/release.zip | awk '{print $1}' > dist/release.zip.sha256
-          printf '{"name":"FAZON Release","tag":"%s","sha256":"%s","created_utc":"%s"}\n' \
-            "${GITHUB_REF_NAME}" \
-            "$(cat dist/release.zip.sha256)" \
-            "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-            > dist/release.manifest.json
+
+          TAG="${GITHUB_REF_NAME}"
+          SHA="$(cat dist/release.zip.sha256)"
+          TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          printf '{"name":"FAZON Release","tag":"%s","sha256":"%s","created_utc":"%s"}\n' "$TAG" "$SHA" "$TS" > dist/release.manifest.json
 
       - name: Install cosign
         uses: sigstore/cosign-installer@v3
         with:
-          cosign-release: ${{ env.COSIGN_VERSION }}
+          cosign-release: "v3.0.4"
 
       - name: Cosign sign-blob (keyless) + bundle
         shell: bash
         run: |
           set -euo pipefail
           cosign version
-          cosign sign-blob \
-            --yes \
-            --bundle dist/release.zip.sigstore.json \
-            dist/release.zip
+          cosign sign-blob --yes --bundle dist/release.zip.sigstore.json dist/release.zip
 
       - name: Rekor digest audit (secondary verification)
         shell: bash
@@ -127,7 +124,7 @@ PY
       - name: Upload signed artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: fazon-release-${{ github.ref_name }}
+          name: "fazon-release-${{ github.ref_name }}"
           path: |
             dist/release.zip
             dist/release.zip.sha256
