@@ -1,0 +1,144 @@
+name: FAZON Release Sign + Rekor Digest Audit
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  COSIGN_VERSION: "v3.0.4"
+  REKOR_URL: "https://rekor.sigstore.dev"
+
+jobs:
+  build-sign-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare release artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf dist
+          mkdir -p dist
+
+          if [ -f "./release.zip" ]; then
+            cp -f ./release.zip dist/release.zip
+          else
+            zip -r dist/release.zip . \
+              -x ".git/*" ".github/*" "dist/*" "*.sigstore.json" "*.bundle" "*.sha256"
+          fi
+
+          sha256sum dist/release.zip | awk '{print $1}' > dist/release.zip.sha256
+          printf '{"name":"FAZON Release","tag":"%s","sha256":"%s","created_utc":"%s"}\n' \
+            "${GITHUB_REF_NAME}" \
+            "$(cat dist/release.zip.sha256)" \
+            "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            > dist/release.manifest.json
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@v3
+        with:
+          cosign-release: ${{ env.COSIGN_VERSION }}
+
+      - name: Cosign sign-blob (keyless) + bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          cosign version
+          cosign sign-blob \
+            --yes \
+            --bundle dist/release.zip.sigstore.json \
+            dist/release.zip
+
+      - name: Rekor digest audit (secondary verification)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          ARTIFACT="dist/release.zip"
+          BUNDLE="dist/release.zip.sigstore.json"
+          REKOR_URL="${REKOR_URL}"
+
+          SHA256_LOCAL="$(sha256sum "$ARTIFACT" | awk '{print $1}')"
+
+          UUIDS="$(python3 - <<'PY'
+import json,sys
+j=json.load(open(sys.argv[1],'rb'))
+uu=set()
+def walk(x):
+  if isinstance(x, dict):
+    for k,v in x.items():
+      lk=k.lower()
+      if lk in ("uuid","entryuuid","rekor_uuid","rekorentryuuid"):
+        if isinstance(v,str): uu.add(v)
+      walk(v)
+  elif isinstance(x, list):
+    for i in x: walk(i)
+walk(j)
+print("\n".join(sorted(uu)))
+PY
+"$BUNDLE")"
+
+          if [ -z "${UUIDS:-}" ]; then
+            echo "NO_REKOR_UUID_FOUND"
+            exit 2
+          fi
+
+          FOUND=0
+          for u in $UUIDS; do
+            curl -fsSL "${REKOR_URL}/api/v1/log/entries/${u}" > "/tmp/rekor_${u}.json"
+            jq -r 'to_entries[0].value.body' "/tmp/rekor_${u}.json" | base64 -d > "/tmp/rekor_${u}.body.json"
+
+            DIG="$(jq -r '
+              .. | objects
+              | ( .spec? // empty )
+              | ( .data? // empty )
+              | ( .hash? // empty )
+              | select(.algorithm?=="sha256")
+              | .value? // empty
+            ' "/tmp/rekor_${u}.body.json" | head -n1 || true)"
+
+            if [ -n "${DIG:-}" ] && [ "$DIG" != "null" ]; then
+              if [ "$DIG" = "$SHA256_LOCAL" ]; then
+                FOUND=1
+                break
+              else
+                echo "REKOR_DIGEST_MISMATCH"
+                echo "LOCAL=$SHA256_LOCAL"
+                echo "REKOR=$DIG"
+                exit 3
+              fi
+            fi
+          done
+
+          if [ "$FOUND" -ne 1 ]; then
+            echo "REKOR_DIGEST_NOT_EXTRACTED"
+            exit 4
+          fi
+
+      - name: Upload signed artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: fazon-release-${{ github.ref_name }}
+          path: |
+            dist/release.zip
+            dist/release.zip.sha256
+            dist/release.zip.sigstore.json
+            dist/release.manifest.json
+
+      - name: Create GitHub Release (attach artifacts)
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/release.zip
+            dist/release.zip.sha256
+            dist/release.zip.sigstore.json
+            dist/release.manifest.json
