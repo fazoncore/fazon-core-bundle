@@ -10,13 +10,12 @@ permissions:
   contents: write
   id-token: write
 
-env:
-  COSIGN_VERSION: "v3.0.4"
-  REKOR_URL: "https://rekor.sigstore.dev"
-
 jobs:
   build-sign-verify:
     runs-on: ubuntu-latest
+    env:
+      COSIGN_VERSION: v3.0.4
+      REKOR_URL: https://rekor.sigstore.dev
 
     steps:
       - name: Checkout
@@ -46,7 +45,7 @@ jobs:
       - name: Install cosign
         uses: sigstore/cosign-installer@v3
         with:
-          cosign-release: "v3.0.4"
+          cosign-release: v3.0.4
 
       - name: Cosign sign-blob (keyless) + bundle
         shell: bash
@@ -124,13 +123,12 @@ PY
       - name: Upload signed artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: "fazon-release-${{ github.ref_name }}"
+          name: fazon-release-${{ github.ref_name }}
           path: |
             dist/release.zip
             dist/release.zip.sha256
             dist/release.zip.sigstore.json
             dist/release.manifest.json
-
 
       - name: Create GitHub Release (attach artifacts)
         uses: softprops/action-gh-release@v2
