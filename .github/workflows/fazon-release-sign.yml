@@ -65,23 +65,13 @@ jobs:
 
           SHA256_LOCAL="$(sha256sum "$ARTIFACT" | awk '{print $1}')"
 
-          UUIDS="$(python3 - <<'PY'
-import json,sys
-j=json.load(open(sys.argv[1],'rb'))
-uu=set()
-def walk(x):
-  if isinstance(x, dict):
-    for k,v in x.items():
-      lk=k.lower()
-      if lk in ("uuid","entryuuid","rekor_uuid","rekorentryuuid"):
-        if isinstance(v,str): uu.add(v)
-      walk(v)
-  elif isinstance(x, list):
-    for i in x: walk(i)
-walk(j)
-print("\n".join(sorted(uu)))
-PY
-"$BUNDLE")"
+          UUIDS="$(jq -r '.. | objects | .uuid? // empty' "$BUNDLE" | sort -u)"
+          LOGINDEX="$(jq -r '.. | objects | .logIndex? // empty' "$BUNDLE" | head -n1 || true)"
+          if [ -z "${UUIDS:-}" ] && [ -n "${LOGINDEX:-}" ]; then
+            Q="/tmp/rekor_by_index_${LOGINDEX}.json"
+            curl -fsSL "${REKOR_URL}/api/v1/log/entries?logIndex=${LOGINDEX}" > "$Q"
+            UUIDS="$(jq -r 'keys[]' "$Q" | head -n1 || true)"
+          fi
 
           if [ -z "${UUIDS:-}" ]; then
             echo "NO_REKOR_UUID_FOUND"
