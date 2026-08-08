@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this public category record, please cite the Zenodo Version 0.2 DOI."
+title: "AI Execution Governance: The Pre-Execution Action Admissibility Layer — A Bounded Category Position Addendum"
+type: report
+authors:
+  - family-names: Goldman
+    given-names: Meir
+    orcid: "https://orcid.org/0009-0005-9253-3916"
+    affiliation: FAZON
+version: "0.2"
+date-released: "2026-08-07"
+doi: "10.5281/zenodo.21833626"
+url: "https://doi.org/10.5281/zenodo.21833626"
+repository-code: "https://github.com/fazoncore/fazon-core-bundle"
+keywords:
+  - AI Execution Governance
+  - Pre-Execution Action Admissibility
+  - governed execution
+  - action-specific permission
+  - current authority
+  - execution boundary
+  - auditability
+  - evidence-grade governance
+license: "LicenseRef-FAZON-Public-Category-Note"

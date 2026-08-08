@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "record_id": "FAZON-REC-2026-08-07-AI-EXECUTION-GOVERNANCE-v0.2",
+  "title": "AI Execution Governance: The Pre-Execution Action Admissibility Layer",
+  "subtitle": "A Bounded Category Position Addendum to Permission Before AI Action Becomes Consequence",
+  "author": {
+    "name": "Meir Goldman",
+    "affiliation": "FAZON",
+    "orcid": "0009-0005-9253-3916"
+  },
+  "publication_date": "2026-08-07",
+  "version": "0.2",
+  "sector": "Enterprise AI Security and Governance",
+  "category": "AI Execution Governance",
+  "subcategory": "Pre-Execution Action Admissibility",
+  "governed_object": "The specific proposed action",
+  "decision_moment": "Before an external or binding consequence",
+  "public_formula": "Permission before AI action becomes consequence.",
+  "short_formula": "No proof → no bind → no side effect.",
+  "canonical_urls": {
+    "zenodo_version": "https://doi.org/10.5281/zenodo.21833626",
+    "zenodo_concept": "https://doi.org/10.5281/zenodo.21497718",
+    "zenodo_base_v0_1": "https://doi.org/10.5281/zenodo.21497719"
+  },
+  "publication_urls": {
+    "linkedin_article": "https://www.linkedin.com/pulse/ai-execution-governance-pre-execution-action-layer-meir-goldman-cddrf",
+    "substack": "https://fazon.substack.com/p/ai-execution-governance-the-pre-execution"
+  },
+  "classification": "PUBLIC_SAFE",
+  "implementation_claim": false,
+  "production_claim": false,
+  "certification_claim": false,
+  "conformance_claim": false,
+  "partnership_claim": false,
+  "created_for_github_at_utc": "2026-08-08T08:34:13Z"
+}
