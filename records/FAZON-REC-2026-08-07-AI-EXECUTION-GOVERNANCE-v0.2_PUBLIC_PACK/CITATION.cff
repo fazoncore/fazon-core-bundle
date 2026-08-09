@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this public record pack, please cite the preferred Zenodo report below."
+title: "FAZON Public Record Pack — AI Execution Governance / Pre-Execution Action Admissibility (v0.2)"
+type: dataset
+authors:
+  - family-names: Goldman
+    given-names: Meir
+    orcid: "https://orcid.org/0009-0005-9253-3916"
+    affiliation: FAZON
+version: "0.2"
+date-released: "2026-08-08"
+repository-code: "https://github.com/fazoncore/fazon-core-bundle"
+url: "https://github.com/fazoncore/fazon-core-bundle/tree/main/records/FAZON-REC-2026-08-07-AI-EXECUTION-GOVERNANCE-v0.2_PUBLIC_PACK"
+license-url: "https://github.com/fazoncore/fazon-core-bundle/blob/main/records/FAZON-REC-2026-08-07-AI-EXECUTION-GOVERNANCE-v0.2_PUBLIC_PACK/RIGHTS.md"
+keywords:
+  - AI Execution Governance
+  - Pre-Execution Action Admissibility
+  - governed execution
+  - action-specific permission
+  - current authority
+  - execution boundary
+  - auditability
+  - evidence-grade governance
+preferred-citation:
+  type: report
+  title: "AI Execution Governance: The Pre-Execution Action Admissibility Layer — A Bounded Category Position Addendum"
+  authors:
+    - family-names: Goldman
+      given-names: Meir
+      orcid: "https://orcid.org/0009-0005-9253-3916"
+      affiliation: FAZON
+  year: 2026
+  version: "0.2"
+  doi: "10.5281/zenodo.21833626"
+  url: "https://doi.org/10.5281/zenodo.21833626"
