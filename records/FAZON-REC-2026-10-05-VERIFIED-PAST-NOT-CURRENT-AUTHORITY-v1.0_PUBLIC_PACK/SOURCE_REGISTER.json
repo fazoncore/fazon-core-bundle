@@ -1,0 +1,96 @@
+{
+  "captured_at_utc": "2026-10-05T04:05:00Z",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Before the Story Decides",
+      "author": "Ricky Jones",
+      "date": "2026-10-04",
+      "basis": "Owner-supplied screenshots IMG_5830–IMG_5839",
+      "status": "SCREENSHOT_TEXT_REVIEWED",
+      "url": null,
+      "support": "Distinguishes evidence and entitlement to act; acting with incomplete information; no obligation to tolerate harm.",
+      "not_support": "Neuroscience, implementation results, influence by FAZON"
+    },
+    {
+      "id": "S02",
+      "title": "Zero Trust Architecture",
+      "author": "NIST / Rose et al.",
+      "date": "2020-08",
+      "basis": "Official NIST SP 800-207 final PDF re-read 2026-10-05, sections 2.1 and 3",
+      "status": "PRIMARY_SOURCE_READ",
+      "url": "https://doi.org/10.6028/NIST.SP.800-207",
+      "support": "Per-session resource access; dynamic policy; continual monitoring with possible reauthentication/reauthorization; policy engine grant/deny/revoke; decision/enforcement roles.",
+      "not_support": "FAZON novelty, episode schema endorsement, mandatory live network query for every action"
+    },
+    {
+      "id": "S03",
+      "title": "Remote ATtestation procedureS (RATS) Architecture",
+      "author": "IETF / Birkholz et al.",
+      "date": "2023-01",
+      "basis": "Live RFC 9334, sections 5, 8, 10",
+      "status": "PRIMARY_SOURCE_READ",
+      "url": "https://www.rfc-editor.org/rfc/rfc9334.html",
+      "support": "Evidence vs appraisal result vs reliance; freshness policy; race condition and bounded reuse.",
+      "not_support": "Identity with FAZON post-action attestation or assurance of target consequences"
+    },
+    {
+      "id": "S04",
+      "title": "Verified Episode v0.2 / public replies",
+      "author": "Joseph A. Sprute",
+      "date": "2026-10-03",
+      "basis": "IMG_5818/5819 and GitHub commit read",
+      "status": "AUTHOR_ATTRIBUTION_AND_ARCHIVE_PRESENCE_ONLY",
+      "url": "https://github.com/ERES-Institute-for-New-Age-Cybernetics/Support-Documentation/commit/cd8b1da9ede244598faf7001afd2160d8cf46c80",
+      "commit_utc": "2026-10-03T19:36:52Z",
+      "support": "Author says contributions will be folded into v0.2 and credited; archive appears in commit.",
+      "not_support": "Independent verification of internal content/tests, implementation equivalence, endorsement of FAZON"
+    },
+    {
+      "id": "S05",
+      "title": "AI Product / Model Change — Migration",
+      "author": "Guillaume Belisle / Vert AI",
+      "date": null,
+      "basis": "1790896053522.pdf, pp.1,4–6",
+      "status": "SUPPLIED_DOCUMENT_READ_PUBLIC_POST_URL_RETRIEVED",
+      "url": "https://www.linkedin.com/posts/guillaume-belisle_ai-model-behavior-migration-activity-7511764475868524545-N6dG",
+      "support": "Behavioral migration, workflow impacts, rollback owner.",
+      "not_support": "Actual quantified outcomes, mandatory reauthorization after every model change"
+    },
+    {
+      "id": "S06",
+      "title": "Discovery Design",
+      "author": "Guillaume Belisle / Vert AI",
+      "date": null,
+      "basis": "1791017299838.pdf, pp.4–6 and IMG_5829",
+      "status": "SUPPLIED_DOCUMENT_AND_REPLY_READ_PUBLIC_POST_PERMALINK_NOT_RETRIEVED",
+      "url": null,
+      "support": "Build/improve/defer/stop; explicit re-entry conditions in author reply.",
+      "not_support": "Implemented Vert AI governance system or technical validation of FAZON"
+    },
+    {
+      "id": "S07",
+      "title": "SIfCS Founding Paper v1.0",
+      "author": "Alexander Wolfgang Strüver",
+      "date": "2026-10-03",
+      "basis": "1791029108024.pdf and image(20261004-060203).png",
+      "status": "BACKGROUND_NOT_USED_AS_CORE_ARTICLE_PROOF",
+      "url": "https://lnkd.in/p/evyimbjz",
+      "support": "Methodological evidence separation and author distinction physical admissibility vs normative permission.",
+      "not_support": "Equivalence of physical possibility and normative authorization, validated universal institution"
+    },
+    {
+      "id": "S08",
+      "title": "Λ — Decision Boundary",
+      "author": "Hiro Yokoki",
+      "date": "2026-10-03",
+      "basis": "Owner-pasted LinkedIn article plus IMG_5851 public reply screenshot",
+      "status": "OWNER_SUPPLIED_ARTICLE_AND_REPLY_REVIEWED_DOI_NOT_INDEPENDENTLY_RETRIEVED",
+      "url": "https://www.linkedin.com/pulse/ai-agents-need-decision-boundary-hiro-yokoki-npn2c",
+      "support": "Selection/authorization/enforcement distinction; author reply says authorization-execution binding essential, EXECUTE verdict alone insufficient, and describes an episode-bound decision object consumed by enforcement before side effects; post-execution trace separate.",
+      "not_support": "Completed implementation, independent verification, technical equivalence with FAZON, verified DOI record.",
+      "reported_doi": "10.5281/zenodo.23121194",
+      "status_in_article": "CORE_SUPPORTING_SIGNAL"
+    }
+  ]
+}

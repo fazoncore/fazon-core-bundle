@@ -1,0 +1,28 @@
+{
+  "record_id": "FAZON-REC-2026-10-05-VERIFIED-PAST-NOT-CURRENT-AUTHORITY-v1.0",
+  "title": "A Verified Past Is Not Authority to Act Now",
+  "subtitle": "Why AI governance must separate evidence, current authority, admission and what actually happened",
+  "author": "Meir Goldman",
+  "affiliation": "FAZON",
+  "version": "1.0",
+  "release_date": "2026-10-05",
+  "repository": "fazoncore/fazon-core-bundle",
+  "record_path": "records/FAZON-REC-2026-10-05-VERIFIED-PAST-NOT-CURRENT-AUTHORITY-v1.0_PUBLIC_PACK",
+  "base_main_sha_preflight": "f3761236076a1fedf575625df32533effb10d079",
+  "planned_tag": "FAZON-REC-2026-10-05-VERIFIED-PAST-NOT-CURRENT-AUTHORITY-v1.0",
+  "planned_release_name": "FAZON Record — A Verified Past Is Not Authority to Act Now (v1.0)",
+  "source_prepublication_freeze_sha256": "2D95862F3E558D031FEA6880307FFB755D0E0738334AE250F9DFB4F96F9DE931",
+  "rights": "Copyright © 2026 Meir Goldman / FAZON. All rights reserved. Public citation and short quotation with clear attribution are permitted.",
+  "zenodo_doi": null,
+  "github_commit_sha": null,
+  "github_release_url": null,
+  "status": "LOCAL_PUBLIC_RELEASE_CANDIDATE_NOT_PUBLISHED",
+  "external_actions": {
+    "github_write": false,
+    "tag_creation": false,
+    "release_creation": false,
+    "zenodo_deposit": false,
+    "publication": false,
+    "external_send": false
+  }
+}
