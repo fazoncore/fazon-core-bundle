@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite this versioned FAZON public record."
+title: "A Verified Past Is Not Authority to Act Now"
+type: article
+authors:
+  - family-names: Goldman
+    given-names: Meir
+    orcid: "https://orcid.org/0009-0005-9253-3916"
+    affiliation: FAZON
+version: "1.0"
+date-released: "2026-10-05"
+repository-code: "https://github.com/fazoncore/fazon-core-bundle"
+url: "https://github.com/fazoncore/fazon-core-bundle/tree/main/records/FAZON-REC-2026-10-05-VERIFIED-PAST-NOT-CURRENT-AUTHORITY-v1.0_PUBLIC_PACK"
+license-url: "https://github.com/fazoncore/fazon-core-bundle/blob/main/records/FAZON-REC-2026-10-05-VERIFIED-PAST-NOT-CURRENT-AUTHORITY-v1.0_PUBLIC_PACK/RIGHTS.md"
+abstract: "Why AI governance must separate past evidence, current authority, admission, enforcement and evidence of what actually happened."
+keywords:
+  - AI Execution Governance
+  - current authority
+  - action-specific permission
+  - governed execution
+  - evidence
+  - admission
+  - enforcement
+  - accountability
