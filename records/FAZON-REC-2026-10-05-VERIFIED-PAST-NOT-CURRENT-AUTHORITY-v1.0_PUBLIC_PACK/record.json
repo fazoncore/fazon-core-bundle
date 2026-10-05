@@ -8,21 +8,23 @@
   "release_date": "2026-10-05",
   "repository": "fazoncore/fazon-core-bundle",
   "record_path": "records/FAZON-REC-2026-10-05-VERIFIED-PAST-NOT-CURRENT-AUTHORITY-v1.0_PUBLIC_PACK",
-  "base_main_sha_preflight": "f3761236076a1fedf575625df32533effb10d079",
-  "planned_tag": "FAZON-REC-2026-10-05-VERIFIED-PAST-NOT-CURRENT-AUTHORITY-v1.0",
-  "planned_release_name": "FAZON Record — A Verified Past Is Not Authority to Act Now (v1.0)",
-  "source_prepublication_freeze_sha256": "2D95862F3E558D031FEA6880307FFB755D0E0738334AE250F9DFB4F96F9DE931",
   "rights": "Copyright © 2026 Meir Goldman / FAZON. All rights reserved. Public citation and short quotation with clear attribution are permitted.",
-  "zenodo_doi": null,
-  "github_commit_sha": null,
-  "github_release_url": null,
-  "status": "LOCAL_PUBLIC_RELEASE_CANDIDATE_NOT_PUBLISHED",
-  "external_actions": {
-    "github_write": false,
-    "tag_creation": false,
-    "release_creation": false,
-    "zenodo_deposit": false,
-    "publication": false,
-    "external_send": false
-  }
+  "immutable_provenance": {
+    "source_prepublication_freeze_sha256": "2D95862F3E558D031FEA6880307FFB755D0E0738334AE250F9DFB4F96F9DE931",
+    "final_premerge_public_pack_candidate_sha256": "8FD4982DE848624468C51D7C85EBA382F0615BAD9C9306BD445FCCC4039F6718",
+    "article_md_sha256": "87BF0AB98E1864A61344B1CB4557669A50384FFD94AC193AEDE43859B08DD96F",
+    "article_pdf_sha256": "C27CB92BEA9890F2636FBEEE7AA8EB9DA8B8B9757601F266A1485ACEA9963AC2",
+    "cover_sha256": "47FB979742065C62BB0E637533ED7D3863C77C3C4A8D46664CDE39EC5F9BB800",
+    "initial_add_only_commit_sha": "4ccbf1dd3fb17d8e9c4fc166d02e3290f2ba8e8c",
+    "initial_merge_commit_sha": "568a4fc1bd9310593fb31d02e51fba1c48e1878a",
+    "initial_merged_tree_sha": "710d387cd69915c1eac530c8b04b979bdefe63fa",
+    "initial_pr_number": 2
+  },
+  "external_provenance": {
+    "github_tag": "FAZON-REC-2026-10-05-VERIFIED-PAST-NOT-CURRENT-AUTHORITY-v1.0",
+    "github_release": "VERIFY_EXTERNALLY_AFTER_SEPARATE_OWNER_AUTHORIZATION",
+    "zenodo_doi": "VERIFY_EXTERNALLY_AFTER_SEPARATE_OWNER_AUTHORIZATION",
+    "note": "Dynamic external publication state is intentionally not self-embedded as mutable truth inside this immutable record pack."
+  },
+  "record_state": "CANONICAL_PUBLIC_RECORD_CONTENT"
 }
