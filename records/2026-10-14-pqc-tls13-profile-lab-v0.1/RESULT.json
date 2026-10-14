@@ -1,0 +1,30 @@
+{
+  "created_at_utc": "2026-10-14T12:42:55.504987Z",
+  "run_status": "PASS_DECLARED_MATRIX",
+  "case_count": 3,
+  "cases": [
+    {
+      "id": "C1_APPROVED_HYBRID",
+      "test_verdict": "PASS",
+      "result_path": "raw/C1_APPROVED_HYBRID/result.json"
+    },
+    {
+      "id": "C2_NO_COMMON_APPROVED_GROUP",
+      "test_verdict": "PASS",
+      "result_path": "raw/C2_NO_COMMON_APPROVED_GROUP/result.json"
+    },
+    {
+      "id": "C3_INJECTED_CLASSICAL_FALLBACK",
+      "test_verdict": "PASS",
+      "result_path": "raw/C3_INJECTED_CLASSICAL_FALLBACK/result.json"
+    }
+  ],
+  "protocol_sha256_unchanged": true,
+  "private_key_was_created_outside_package": true,
+  "private_key_exists_after_temp_cleanup": false,
+  "private_key_included": false,
+  "github_write": false,
+  "public_response": false,
+  "production_change": false,
+  "fazon_product_runtime_tested": false
+}

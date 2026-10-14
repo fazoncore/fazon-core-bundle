@@ -1,0 +1,78 @@
+{
+  "schema": "FAZON_PQC_OWNER_UPLOAD_PREPARATION_V1",
+  "created_at_utc": "2026-10-14T13:57:49.788895Z",
+  "repository": "fazoncore/fazon-core-bundle",
+  "repository_id": 1084330529,
+  "repository_visibility_read": "public",
+  "base_commit_read": "bdebbe09de4abb434df5def5a0a2720babcda4a4",
+  "target_directory": "records/2026-10-14-pqc-tls13-profile-lab-v0.1/",
+  "proposed_branch": "record/pqc-tls13-profile-lab-v0.1",
+  "approved_evidence_archive_sha256": "af2a7bbe4b95cbfd34fde3242d4886b64c6c0f622cc5eca3e0b60f5c1faa9e3a",
+  "approval_provenance": "Owner approved the exact original laboratory evidence archive and repository fixation in the conversation; no new technical claims are introduced by this wrapper.",
+  "source_verification": {
+    "archive_bytes": 117926,
+    "archive_sha256_match": true,
+    "sidecar_match": true,
+    "crc": "PASS",
+    "unique_members": 95,
+    "manifest_entries": 93,
+    "manifest_matches": 93,
+    "sha256sum_entries": 94,
+    "sha256sum_matches": 94,
+    "bounded_private_key_marker_hits": [],
+    "scan_is_not_dlp_certification": true
+  },
+  "files": [
+    {
+      "path": "FAZON_PQC_TLS13_PROFILE_LAB_V0_1_20261014T124252Z_EVIDENCE.zip",
+      "bytes": 117926,
+      "sha256": "af2a7bbe4b95cbfd34fde3242d4886b64c6c0f622cc5eca3e0b60f5c1faa9e3a",
+      "git_blob_sha1": "ee1d6c3a0201a82dfb9c7045ec19e87618d2652c",
+      "role": "EXACT_ORIGINAL_SOURCE_COPY"
+    },
+    {
+      "path": "FAZON_PQC_TLS13_PROFILE_LAB_V0_1_20261014T124252Z_EVIDENCE.zip.sha256",
+      "bytes": 129,
+      "sha256": "57d6257374a2b326fa55585c20c3370cc3aba2d5c1203225a1400b05b56aab5a",
+      "git_blob_sha1": "512357da06681ec78657bfdd221e7c517d791269",
+      "role": "EXACT_ORIGINAL_SOURCE_COPY"
+    },
+    {
+      "path": "FAZON_PQC_TLS13_PROFILE_LAB_V0_1_20261014T124252Z_POST_SEAL_VERIFICATION.json",
+      "bytes": 696,
+      "sha256": "f1be54f67bf660dee3bd2ea3960d15122832e1ddf8f0c04a5120989ce3dddc0c",
+      "git_blob_sha1": "ebcd673f54003d0921ea8c5dfb364d4d1c6e8356",
+      "role": "EXACT_ORIGINAL_SOURCE_COPY"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5577,
+      "sha256": "63335403dff621d324d088b3aadac1f74f05fbfb59db85365a10a8daa4b5a901",
+      "git_blob_sha1": "2635eb94c3a1bae3299427245743665c917ed6bf",
+      "role": "NEW_PREPARATION_INDEX"
+    },
+    {
+      "path": "RESULT.json",
+      "bytes": 872,
+      "sha256": "9fef6f32767fed4184a61c15c3f350276629878991ad25e431cef9a98298f111",
+      "git_blob_sha1": "06abcd2f422a9480df4a8331d0d3357430e41a3d",
+      "role": "EXACT_ARCHIVE_MEMBER_COPY"
+    }
+  ],
+  "manifest_excludes": [
+    "UPLOAD_MANIFEST.json",
+    "SHA256SUMS.txt"
+  ],
+  "publication_operations_performed_here": false,
+  "github_commit_created": false,
+  "github_pr_created": false,
+  "github_readback_completed": false,
+  "github_release_verified": false,
+  "sigstore_verified": false,
+  "rekor_binding_verified": false,
+  "workflow_changed_or_run": false,
+  "live_lab_rerun": false,
+  "public_reply_sent": false,
+  "rights_scope": "Original FAZON synthetic laboratory evidence and its bounded record only; no external restricted manuscripts or private correspondence.",
+  "next_action": "Owner may submit this folder through the normal GitHub web interface under existing permissions. Stop on protection or permission warnings; no bypass is authorized."
+}

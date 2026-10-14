@@ -1,0 +1,19 @@
+{
+  "verified_at_utc": "2026-10-14T12:47:50.979991Z",
+  "archive": "FAZON_PQC_TLS13_PROFILE_LAB_V0_1_20261014T124252Z_EVIDENCE.zip",
+  "archive_bytes": 117926,
+  "archive_sha256": "af2a7bbe4b95cbfd34fde3242d4886b64c6c0f622cc5eca3e0b60f5c1faa9e3a",
+  "archive_members": 95,
+  "crc": "PASS",
+  "exact_member_bytes": "PASS",
+  "manifest_files_verified": 93,
+  "sha256sum_entries_verified": 94,
+  "sidecar_match": true,
+  "lab_cases_passed": 3,
+  "offline_review_passed": 65,
+  "source_protocol_sha256": "6a2d3724314ca9d50e0941843ae262fa8f4abda396f7e2ba7e44cb94a58a9854",
+  "github_write": false,
+  "sigstore_verification": false,
+  "rekor_binding_verification": false,
+  "production_ready": false
+}
